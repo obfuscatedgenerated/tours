@@ -1,0 +1,51 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Installing pip Packages",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "# Installing pip packages\r\n\r\nThis tour demos installing packages from PyPi via pip.\r\n\r\nPrerequisites:\r\n- Python 3 on the PATH\r\n- pip installed and on the PATH (comes packaged with the Python installer nowadays)\r\n\r\nYou should have the option to add these to the PATH in the Python installer but if you haven't done so, just look up how to do it for your system. It means you can call the programs from any command line without needing the full path. The interactable commands in this tutorial won't work without it."
+    },
+    {
+      "file": "main.py",
+      "description": "## A simple script\r\n\r\nHere we have a simple script that converts numbers to human readable formats. (e.g. 1000 -> 1K)\r\n\r\nLet's try running it! Click the command below to execute it:\r\n\r\n>> py main.py\r\n\r\n*Something will go very wrong... Click next step once you've tried running it.*",
+      "line": 1
+    },
+    {
+      "title": "Missing package",
+      "description": "## Missing package\r\n\r\nOh no! We've got an error:\r\n\r\n```\r\nTraceback (most recent call last):\r\n  File ...\\installing_pip_packages\\main.py\", line 1, in <module>\r\n    import numpretty as npf\r\nModuleNotFoundError: No module named 'numpretty'\r\n```\r\n\r\nDon't panic, we can fix this!"
+    },
+    {
+      "file": "main.py",
+      "description": "## Numpretty\r\n\r\nLook above, this script imports a module called \"numpretty\", but we don't have it. This is where using pip can help!",
+      "line": 1
+    },
+    {
+      "title": "About the package",
+      "description": "## About the package\r\n\r\n### What are packages?\r\n\r\nPython packages are modules created by other developers and put online for anybody to use in their project. (obeying software licenses of course)\r\n\r\n### What is PyPI?\r\n\r\nThe Python Package Index (PyPI) is the primary repository for Python packages. We can view package details on the website, https://pypi.org or download them directly into our project with the `pip` command line tool.\r\n\r\n### What is numpretty?\r\n\r\nNumpretty is a small test package I created that can be used for this tour. You can view it online here:\r\n\r\nhttps://pypi.org/project/numpretty/\r\n\r\nWe're going to install it in the next few steps."
+    },
+    {
+      "title": "Virtual environments",
+      "description": "## Virtual environments\r\n\r\nHold tight, we'll get to installing the package soon, but we need to cover virtual environments. They're crucial to your sanity when working on larger projects!\r\n\r\n### Without virtual environments\r\n\r\nBy default, packages are installed alongside the Python executable in a directory called `site-packages`. With this, the package is *global*. A global package can be used in any Python project on the system by simply importing it. While this may seem convenient, it leads to headaches when:\r\n\r\n- A project needs a different version of the package\r\n- A project needs another package with the same name from another package repository or a Git repository\r\n- A project needs to actively extend a package\r\n- and more...\r\n\r\nLuckily, this is an issue solved by virtual environments!\r\n\r\n### Creating virtual environments\r\n\r\nWe can use Python to create virtual environments in the current directory using `venv`.\r\n\r\nLet's create one now, it's simple! It may take a little time to complete, so feel free to read the rest of this page but wait until it finishes to run any other commands.\r\n\r\nClick the command below to run it:\r\n\r\n>> py -m venv env\r\n\r\nLet's break down what that command did. We called the `py` executable (Python) with the `-m` flag to specify to run a module. We specified to run the `venv` module and we passed the name `env` as the name of the environment. You can change env to be anything you want to name it, but the convention is either `venv` or `env`. I prefer env as it's a character shorter to type! 😄\r\n\r\n### Activating the virtual environment\r\n\r\nWe can run the environment's activate script to activate it!\r\n\r\nIf you're using Windows, click this command to run it:\r\n\r\n>> .\\env\\Scripts\\activate\r\n\r\nIf you're using a Unix system (e.g. Linux, Mac, BSD), click this command to run it:\r\n\r\n>> source env/bin/activate\r\n\r\nYou should see our command line now has the (env) prefix, which shows we're ready to go!\r\n\r\n---\r\n\r\n*I know you're very excited to install the package, so let's get on with it!*\r\n\r\n**Please don't skip past this page though, it's very important!**"
+    },
+    {
+      "title": "Install the package",
+      "description": "## Install the package\r\n\r\nIt's simple to install packages!\r\n\r\n\r\n\r\nClick this command to run it:\r\n\r\n>> pip install numpretty\r\n\r\nThis command uses the main PyPI repo and installs the package we need, numpretty. Hooray!\r\n\r\n\r\n---\r\n\r\nWe can view details of the package installed with this command:\r\n\r\n>> pip show numpretty\r\n\r\nWe can also list the packages we have installed with this command:\r\n\r\n>> pip list\r\n\r\n---\r\n\r\nThere are many other subcommands available which you can view with:\r\n\r\n>> pip -h"
+    },
+    {
+      "file": "main.py",
+      "description": "### It's alive!\r\n\r\nNow our program should work!\r\n\r\nLet's run it, click this command:\r\n\r\n>> py main.py\r\n\r\nIf all is well, you should see the following output:\r\n\r\n```\r\n1000 formatted:\r\n1K\r\n1000000 formatted:\r\n1M\r\n1000000000 formatted:\r\n1B\r\n```\r\n\r\nIf you don't see this and you get an error, try reviewing the tour from the start. Perhaps you're missing a required prerequisite or you missed a command?",
+      "line": 1
+    },
+    {
+      "file": "requirements.txt",
+      "description": "## Bonus - requirements.txt\r\n\r\nIn addition to installing packages with the `pip install <package>` command, we can install a list of packages required by a project.\r\n\r\nThe requirements are stored in an aptly named file, requirements.txt. You'll often see this in projects online.\r\n\r\nThe file lists package names and their version requirements using a comparison operator, such as >= or ==.\r\n\r\nWithin our virtual environment still, we can run the following command to install all requirements:\r\n\r\n>> pip install -r requirements.txt",
+      "line": 1
+    },
+    {
+      "title": "Thank you!",
+      "description": "# Thank you!\r\n\r\n## **Congratulations on finishing this tutorial!**\r\n\r\n### Popular Packages\r\n\r\nHere are some packages you might want to try out in your own projects:\r\n\r\n- [numpy](https://pypi.org/project/numpy)\r\n- [Pillow](https://pypi.org/project/Pillow)\r\n- [matplotlib](https://pypi.org/project/matplotlib)\r\n- [PyAutoGUI](https://pypi.org/project/PyAutoGUI)\r\n- [PyQt5](https://pypi.org/project/PyQt5)\r\n\r\n### A word of warning\r\n\r\nOn PyPI and other package registries such as npm for JavaScript, malicious users may try to upload malware to the registry. They may also register the packages with names similar to popular packages to trick users into installing them (a practice called typosquatting). Please be careful and check the package name you've typed before you install them!\r\n\r\nThe maintainers of package repos try their best to fight malware and typosquatters but there will always inevitably be some on there, but don't let this dissuade you from the world of Python packages!\r\n\r\n### Links\r\n\r\nIf you want to see more of these tours, here are some of my links:\r\n\r\n- [GitHub Repo](https://github.com/obfuscatedgenerated/tours)\r\n- [My Website](https://ollieg.codes)"
+    }
+  ],
+  "description": "This tour demos installing packages from PyPi via pip."
+}
