@@ -7,5 +7,5 @@ You should open the individual tutorial folders (or download the directory and u
 ## Tutorials
 
 | Language | Tutorial | Description | Difficulty | Download Directory (ZIP) |
-| --- | --- | --- | --- |
-| Python | [Installing pip packages](/python/installing_pip_packages) | This tour demos installing packages from PyPi via pip. | Beginner | https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fobfuscatedgenerated%2Ftours%2Ftree%2Fmain%2Fpython%2Finstalling_pip_packages |
+| --- | --- | --- | --- | --- |
+| Python | [Installing pip packages](/python/installing_pip_packages) | This tour demos installing packages from PyPi via pip. | Beginner | [Download](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fobfuscatedgenerated%2Ftours%2Ftree%2Fmain%2Fpython%2Finstalling_pip_packages) |
