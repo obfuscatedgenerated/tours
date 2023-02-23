@@ -4,7 +4,7 @@
   "steps": [
     {
       "title": "Introduction",
-      "description": "# Installing pip packages\r\n\r\nThis tour demos installing packages from PyPi via pip.\r\n\r\nPrerequisites:\r\n- Python 3 on the PATH\r\n- pip installed and on the PATH (comes packaged with the Python installer nowadays)\r\n\r\nYou should have the option to add these to the PATH in the Python installer but if you haven't done so, just look up how to do it for your system. It means you can call the programs from any command line without needing the full path. The interactable commands in this tutorial won't work without it."
+      "description": "# Installing pip packages\r\n\r\nThis tour demos installing packages from PyPi via pip.\r\n\r\nPrerequisites:\r\n- Access to the terminal (in VSCode)\r\n- Python 3 on the PATH\r\n- pip installed and on the PATH (comes packaged with the Python installer nowadays)\r\n\r\nYou should have the option to add these to the PATH in the Python installer but if you haven't done so, just look up how to do it for your system. It means you can call the programs from any command line without needing the full path. The interactable commands in this tutorial won't work without it."
     },
     {
       "file": "main.py",
